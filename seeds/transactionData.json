@@ -1,0 +1,23 @@
+[
+  {
+    "type": "income",
+    "amount": 100000.00,
+    "commentary": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "category": "Work",
+    "date": "10/7/2024"
+  },
+  {
+    "type": "expense",
+    "amount": 200000.00,
+    "commentary": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "category": "Services",
+    "date": "10/7/2024"
+  },
+  {
+    "type": "expense",
+    "amount": 10000.00,
+    "commentary": null,
+    "category": "Services",
+    "date": "10/7/2024"
+  }
+]
