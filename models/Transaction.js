@@ -1,4 +1,4 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Transaction extends Model {}
@@ -6,28 +6,28 @@ class Transaction extends Model {}
 Transaction.init(
     {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
         type: {
-            type: Datatypes.ENUM('income', 'expense'),
+            type: DataTypes.ENUM('income', 'expense'),
             allowNull: false
         },
         amount: {
-            type: Datatypes.DECIMAL,
+            type: DataTypes.DECIMAL,
             allowNull: false
         },
         description: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
         },
         category: {
-            type: Datatypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false
         },
         date: {
-            type: Datatypes.DATE,
+            type: DataTypes.DATE,
             allowNull: false
         }
 
@@ -37,7 +37,7 @@ Transaction.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'project',
+        modelName: 'transaction',
       }
     );
     
