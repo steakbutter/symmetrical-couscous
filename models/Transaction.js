@@ -19,17 +19,25 @@ Transaction.init(
             type: DataTypes.DECIMAL,
             allowNull: false
         },
-        description: {
+        commentary: {
             type: DataTypes.STRING,
+            allowNull: true,
         },
         category: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         date: {
             type: DataTypes.DATE,
             allowNull: false
-        }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            refereces: {
+              model: 'user',
+              key: 'id',
+            },
+          },
 
     },
     {
