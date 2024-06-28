@@ -4,6 +4,26 @@ const withAuth = require('../utils/auth');
 
 // GET login route
 
+
+router.get('/', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findAll({
+          attributes: { exclude: ['password'] },
+          order: [['name', 'ASC']],
+        });
+    
+        const users = userData.map((project) => project.get({ plain: true }));
+    
+        res.render('homepage', {
+          users,
+          // Pass the logged in flag to the template
+          logged_in: req.session.logged_in,
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    });
+
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
@@ -13,33 +33,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/', async (req, res) => {
-        try {
-            // Get all projects and JOIN with user data
-            const transactionData = await Transaction.findAll({
-                include: [
-                    {
-                        model: User,
-                        attributes: ['name'],
-                    },
-                ],
-            });
-
-            // Serialize data so the template can read it
-            const transactions = transactionData.map((transaction) => transaction.get({ plain: true }));
-            console.log(transactions);
-            // Pass serialized data and session flag into template
-            res.render('homepage', {
-                transactions,
-                logged_in: req.session.logged_in
-            });
-        } catch (err) {
-            res.status(500).json(err);
-        }
-    }
-);
-
-
+module.exports = router;
 
 
 
