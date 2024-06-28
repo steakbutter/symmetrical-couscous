@@ -7,19 +7,18 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
-        const userData = await User.findAll({
-          attributes: { exclude: ['password'] },
-          order: [['name', 'ASC']],
-        });
+        const transactionData = await Transaction.findAll();
     
-        const users = userData.map((project) => project.get({ plain: true }));
+        const transactions = transactionData.map((transaction) =>
+          transaction.get({ plain: true })
+        );
     
         res.render('homepage', {
-          users,
-          // Pass the logged in flag to the template
+          transactions,
           logged_in: req.session.logged_in,
         });
       } catch (err) {
+        console.log(err);
         res.status(500).json(err);
       }
     });
