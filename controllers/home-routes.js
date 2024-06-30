@@ -7,14 +7,15 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
-        const transactionData = await Transaction.findAll();
+        const userData = await User.findByPk(req.session.user_id, {
+          attributes: { exclude: ['password'] },
+          include: [{ model: Transaction }],
+        });
     
-        const transactions = transactionData.map((transaction) =>
-          transaction.get({ plain: true })
-        );
-    
+        const user = userData.get({ plain: true });
+        console.log(user)
         res.render('homepage', {
-          transactions,
+          user,
           logged_in: req.session.logged_in,
         });
       } catch (err) {
@@ -31,18 +32,5 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
 });
-
-module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;

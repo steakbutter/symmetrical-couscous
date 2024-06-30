@@ -1,10 +1,18 @@
-<h2>Transactions</h2>
-<div id="displayData"> Displayed Transaction: </div>
-<ul>
-    {{#each transactions}}
-        <li>{{this.date}} <br>
-            Type:{{this.type}} <br>
-            Amount ${{this.amount}} <br>
-            Category:{{this.category}}<br><br>
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{user.name}}!</h2>
+  </div>
+</div>
+
+<div id="displayData" class="col-md-6 project-list">
+<h3>Registered Transactions:</h3>
+{{#if user.transactions.length}}
+    {{#each user.transactions as |transaction|}}
+        <li>{{transaction.date}} <br>
+            Type:{{transaction.type}} <br>
+            Amount ${{transaction.amount}} <br>
+            Category:{{transaction.category}}<br><br>    
     {{/each}}
-</ul>
+  </div>
+  {{/if}}
+</div>

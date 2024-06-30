@@ -20,12 +20,19 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const transactionData = await Transaction.findByPk(req.params.id, {
-            include: [{ model: User }],
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                }
+            ],
         });
+
         if (!transactionData) {
             res.status(400).json({ message: 'No trasnsaction found with that id.'});
             return;
-        }
+        };
+        
         res.status(200).json(transactionData);
     } catch (err) {
         res.status(500) 
