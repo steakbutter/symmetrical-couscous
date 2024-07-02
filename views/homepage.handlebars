@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{user.name}}!</h2>
+    <p id="id-user" hidden>{{user.id}}</p>
   </div>
 </div>
 
@@ -10,40 +11,19 @@
     {{#each user.transactions as |transaction|}}
         <li>{{transaction.date}} <br>
             Type:{{transaction.type}} <br>
-            Amount ${{transaction.amount}} <br>
+            Amount: ${{transaction.amount}} <br>
             Category:{{transaction.category}}<br><br>    
     {{/each}}
   </div>
   {{/if}}
 </div>
 
-<h4>Expenses by category</h4>
+<h4>Expenses</h4>
 <div>
   <canvas id="myChart"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const ctx = document.getElementById('myChart');
-
-  new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Income', 'Expenses'],
-      datasets: [{
-        label: 'Transactions',
-        data: [100000,2000000],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
+<script src="/js/charts.js"></script>
 
 <a href="/income">Go to Income chart</a>

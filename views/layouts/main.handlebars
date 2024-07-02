@@ -15,16 +15,19 @@
       My Precious
     </h1>
     <!-- Only display the logout button if the user is logged in -->
-    {{#if logged_in}}
     <nav>
       <a href="/">Home</a>
+    {{#if logged_in}}
       <a class="btn" id="logout">Logout</a> 
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
     </nav>
     
   </header>
   <main>
     {{!-- Top section of the page --}}
-    
+    {{#if logged_in}}
     <div id="transaction-form">
       <p>Enter your transactions:</p>
       <form>
@@ -57,7 +60,31 @@
 
         <button type="submit" id="add-btn">Add</button>
       </form>
-    
+    {{else}}
+    <div id="transaction-form">
+      <p>Enter your transactions:</p>
+      <form>
+        <div>
+          <label>Type:</label>
+          <select id="transaction-type" disabled>
+          <option value="" disabled selected>Type</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Amount:</label>
+         <input type="number" id="transaction-amount" step="0.01" disabled>
+        </div>
+
+        <div>
+          <label>Category:</label>
+          <select id="transaction-category" disabled>
+            <option value="" disabled selected>Category</option>
+          </select>
+        </div>
+
+        <button type="submit" id="add-btn">Add</button>
+      </form>
     {{/if}}
     </div>
     {{{ body }}}
