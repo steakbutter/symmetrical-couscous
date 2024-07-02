@@ -5,6 +5,6 @@ const transactionRoutes = require('./transaction-routes');
 
 // When a request is made to the /users or /transaction path, it will be directed to the index.js in the /users or /transaction folder.
 router.use('/users', userRoutes);
-router.use('/transaction', transactionRoutes);
+router.use('/transactions', transactionRoutes);
 
 module.exports = router;

@@ -22,4 +22,28 @@
   <canvas id="myChart"></canvas>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Income', 'Expenses'],
+      datasets: [{
+        label: 'Transactions',
+        data: [100000,2000000],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
 <a href="/income">Go to Income chart</a>
