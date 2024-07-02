@@ -19,10 +19,6 @@ Transaction.init(
             type: DataTypes.DECIMAL,
             allowNull: false
         },
-        commentary: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
         category: {
             type: DataTypes.STRING,
             allowNull: true

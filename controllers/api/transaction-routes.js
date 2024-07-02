@@ -1,8 +1,9 @@
 const router = require('express').Router();
 // Import models
 const { Transaction, User} = require('../../models');
+const withAuth = require('../../utils/auth');
 
-// get all transactions
+// ERASE AT THE END
 
 router.get('/', async (req, res) => {
     try {
@@ -14,7 +15,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+//////////////////
 // get one transaction
 
 router.get('/:id', async (req, res) => {
@@ -41,22 +42,24 @@ router.get('/:id', async (req, res) => {
 
 // Create a transaction 
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try{
-        const transactionData = await Transaction.create(req.body);
-        res.status(200).json(transactionData);
+        const newTransaction = await Transaction.create({
+            ...req.body, 
+            user_id: req.session.user_id,
+        });
+        res.status(200).json(newTransaction);
     } catch (err) {
         res.status(400).json(err);
     }
 });
 
 // Update a transaction
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const transactionData = await Transaction.update({
             type: req.body.type,
             amount: req.body.amount,
-            commentary: req.body.commentary,
             category: req.body.category,
             date: req.body.date
         },
@@ -77,7 +80,8 @@ router.delete('/:id', async (req, res) => {
     try {
         const transactionData = await Transaction.destroy({
             where: {
-                id: req.params.id
+                id: req.params.id,
+                user_id: req.params.user_id,
             }
         });
 

@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
         });
     
         const user = userData.get({ plain: true });
-        console.log(user)
+
         res.render('homepage', {
           user,
           logged_in: req.session.logged_in,
@@ -24,24 +24,24 @@ router.get('/', withAuth, async (req, res) => {
       }
     });
 
-    router.get('/income', withAuth, async (req, res) => {
-        try {
-            const userData = await User.findByPk(req.session.user_id, {
-              attributes: { exclude: ['password'] },
-              include: [{ model: Transaction }],
-            });
-        
-            const user = userData.get({ plain: true });
-            console.log(user)
-            res.render('income', {
-              user,
-              logged_in: req.session.logged_in,
-            });
-          } catch (err) {
-            console.log(err);
-            res.status(500).json(err);
-          }
-        });
+  router.get('/income', withAuth, async (req, res) => {
+      try {
+          const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Transaction }],
+          });
+      
+          const user = userData.get({ plain: true });
+          console.log(user)
+          res.render('income', {
+            user,
+            logged_in: req.session.logged_in,
+          });
+        } catch (err) {
+          console.log(err);
+          res.status(500).json(err);
+        }
+      });
 
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
