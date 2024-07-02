@@ -5,8 +5,8 @@ const newTransactionHandler = async (event) => {
   const type = document.querySelector('#transaction-type').value;
   const amount = document.querySelector('#transaction-amount').value;
   const category = document.querySelector('#transaction-category').value;
-  const date = new Date();
-  date.toJSON();
+  const date = new Date().toJSON();
+  
 
   console.log(type, amount, category, date);
   if (type && amount && category) {

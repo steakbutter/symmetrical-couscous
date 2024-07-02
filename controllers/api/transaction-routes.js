@@ -7,9 +7,10 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        const transactionData = await Transaction.findAll({
-            include: [{ model: User }],
-        });
+        const transactionData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Transaction }],
+          });
         res.status(200).json(transactionData);
     } catch (err) {
         res.status(500).json(err);
