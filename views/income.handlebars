@@ -1,29 +1,8 @@
-<h4>Income and Expenses</h4>
+<h4>Income</h4>
 <div>
-  <canvas id="secondChart"></canvas>
+  <canvas id="income-chart"></canvas>
 </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-   const secondChart = document.getElementById('secondChart')
-
-    new Chart(secondChart, {
-    type: 'bar',
-    data: {
-      labels: ['Income', 'Expense'],
-      datasets: [{
-        label: 'Transactions',
-        data: [5000, 4100],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
+<script src="/js/income.js"></script>
