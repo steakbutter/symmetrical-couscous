@@ -3,9 +3,9 @@ const router = require('express').Router();
 const { Transaction, User} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// ERASE AT THE END
+// 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const transactionData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
         });
 
         if (!transactionData) {
-            res.status(400).json({ message: 'No trasnsaction found with that id.'});
+            res.status(400).json({ message: 'No transaction found with that id.'});
             return;
         };
         
@@ -77,21 +77,25 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 // Delete a transaction
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
+    
     try {
         const transactionData = await Transaction.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.params.user_id,
+                user_id: req.session.user_id,
             }
         });
-
+        
         if (!transactionData) {
             res.status(400).json({ message: 'No transaction found with that id.'});
             return;
         }
-    } catch (error) {
-        res.status(500).json(error);
+
+        res.status(200).json(transactionData);
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
     }
 });
 

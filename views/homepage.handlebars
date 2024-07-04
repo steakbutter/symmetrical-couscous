@@ -12,7 +12,8 @@
         <li>{{transaction.date}} <br>
             Type:{{transaction.type}} <br>
             Amount: ${{transaction.amount}} <br>
-            Category:{{transaction.category}}<br><br>    
+            Category:{{transaction.category}}<br><br>
+            <button id="delete-btn" data-id="{{transaction.id}}">DELETE</button>    
     {{/each}}
   </div>
   {{/if}}
@@ -24,7 +25,4 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="/js/total.js"></script>
-
-<a href="/income">Go to Income chart</a>
-<a href="/expense">Go to Expenses Chart</a>
+<script src="./js/total.js"></script>

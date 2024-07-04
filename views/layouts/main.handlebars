@@ -18,6 +18,8 @@
     <nav>
       <a href="/">Home</a>
     {{#if logged_in}}
+      <a href="/income">Go to Income chart</a>
+      <a href="/expense">Go to Expenses Chart</a>
       <a class="btn" id="logout">Logout</a> 
     {{else}}
       <a href="/login">Login</a>
@@ -73,9 +75,9 @@
 
   <!-- Only include the logout script if the user is logged in -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="./js/logout.js"></script>
   {{/if}}
-  <script src="/js/modal.js"></script>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
