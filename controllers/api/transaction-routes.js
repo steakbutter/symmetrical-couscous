@@ -86,7 +86,7 @@ router.delete('/:id', withAuth, async (req, res) => {
                 user_id: req.session.user_id,
             }
         });
-        
+       
         if (!transactionData) {
             res.status(400).json({ message: 'No transaction found with that id.'});
             return;

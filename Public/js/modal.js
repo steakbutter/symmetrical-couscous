@@ -42,6 +42,10 @@ const deleteTransactionHandler = async (event) => {
   }
 };
 
-document.querySelector('#transaction-form').addEventListener('submit', newTransactionHandler);
+document
+  .querySelector('#transaction-form')
+  .addEventListener('submit', newTransactionHandler);
 
-document.querySelector('#delete-btn').addEventListener('click', deleteTransactionHandler);
+document
+  .querySelector('#delete-btn')
+  .addEventListener('click', deleteTransactionHandler);
