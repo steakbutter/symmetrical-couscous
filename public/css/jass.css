@@ -1,122 +1,246 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f4f8; /* Light blue background */
+  color: #333;
 }
 
-main {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-h2 {
-  color: #2c3e50;
-}
-
-h3, h4 {
-  color: #34495e;
+h1 {
+  margin: 0;
+  color: #007bff; /* Blue color for the header text */
 }
 
 a {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  color: #007bff; /* Blue color for links */
+  margin: 0 10px;
 }
 
 a:hover {
-  background-color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background-color: #e3f2fd; /* Light blue background for the header */
+  border-bottom: 1px solid #b3e5fc;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.p-2 {
+  padding: 20px;
+}
+
+/* Navigation */
+nav a {
+  margin: 0 10px;
+}
+
+/* Button */
+.btn {
+  background-color: #4caf50; /* Green color for buttons */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #388e3c;
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="number"], select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #ffeb3b; /* Yellow color for the submit button */
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #fbc02d;
+}
+
+/* Footer */
+footer {
+  background-color: #e3f2fd; /* Light blue background for the footer */
+  border-top: 1px solid #b3e5fc;
+  text-align: center;
+  padding: 10px;
+  color: #333;
+}
+
+
+/* -------------------------------LOGIN PAGE------------------------------ */
+
+h2 {
+  color: #007bff; /* Blue color for the headers */
 }
 
 .row {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  margin: 0 -15px;
 }
 
-.col-auto {
-  flex: 0 0 auto;
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
-#displayData {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+.form {
+  background-color: #ffffff; /* White background for the forms */
   padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#displayData h3 {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-#displayData ul {
-  list-style: none;
-  padding: 0;
+.form-group {
+  margin-bottom: 15px;
 }
 
-#displayData li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-}
-
-#displayData li:last-child {
-  border-bottom: none;
-}
-
-canvas {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-/* -------------------------------Form CSS--------------------------------------------------------- */
-#transaction-form {
-  margin-top: 20px;
-}
-
-#transaction-form p {
-  font-size: 20px;
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
   color: #333;
 }
 
-#transaction-form form {
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-}
-
-#transaction-form form > div {
-  margin-right: 10px;
-}
-
-#transaction-form label {
-  font-size: 14px;
-  margin-right: 5px;
-}
-
-#transaction-type, #transaction-amount, #transaction-category {
-  padding: 5px;
-  border-radius: 4px;
+.form-input {
+  width: 100%;
+  padding: 10px;
   border: 1px solid #ccc;
-  background-color: #ADD8E6;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-#add-btn {
-  padding: 5px 10px;
-  background-color: #4CAF50; 
-  color: white;
+.btn {
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-#add-btn:hover {
-  background-color: #195f1c; 
+.btn-primary {
+  background-color: #4caf50; /* Green color for buttons */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #388e3c;
+}
+
+button[type="submit"] {
+  background-color: #ffeb3b; /* Yellow color for the submit button */
+  color: #333;
+}
+
+button[type="submit"]:hover {
+  background-color: #fbc02d;
+}
+
+/* ----------------------------TRANSACTION FORM------------------------------ */
+
+#transaction-form {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#transaction-form p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff; /* Blue color for the paragraph */
+}
+
+form {
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+select, input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50; /* Green color for the button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #388e3c;
 }
