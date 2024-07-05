@@ -30,6 +30,12 @@
   <main>
     {{!-- Top section of the page --}}
     {{#if logged_in}}
+    <div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{user.name}}!</h2>
+    <p id="id-user" hidden>{{user.id}}</p>
+  </div>
+</div>
     <div id="transaction-form">
       <p>Enter your transactions:</p>
       <form>
