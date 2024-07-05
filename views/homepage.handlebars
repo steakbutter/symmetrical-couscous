@@ -12,7 +12,8 @@
         <li>{{transaction.date}} <br>
             Type:{{transaction.type}} <br>
             Amount: ${{transaction.amount}} <br>
-            Category:{{transaction.category}}<br><br>    
+            Category:{{transaction.category}}<br><br> 
+            <button id="delete-btn" data-id="{{transaction.id}}">DELETE</button>   
     {{/each}}
   </div>
   {{/if}}
