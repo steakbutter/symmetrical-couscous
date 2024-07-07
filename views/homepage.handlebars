@@ -1,22 +1,23 @@
+<div class="tablita" id="tablita-1"></div>
+<h3 class="titlesForm" id="tableRegistered">Registered Transactions:</h3>
+<div id="displayData" class="project-list ">
 
-
-<div id="displayData" class="col-md-6 project-list">
-<h3>Registered Transactions:</h3>
 {{#if user.transactions.length}}
     {{#each user.transactions as |transaction|}}
-        <li>{{transaction.date}} <br>
-            Type:{{transaction.type}} <br>
-            Amount: ${{transaction.amount}} <br>
-            Category:{{transaction.category}}<br><br> 
-            <button id="delete-btn" data-id="{{transaction.id}}">DELETE</button>   
+        <li>
+         <p> <strong> Date:</strong> {{transaction.date}} </p>
+           <p> <strong> Type:</strong>  {{transaction.type}} </p>
+           <p> <strong>Amount: </strong> ${{transaction.amount}} </p>
+            <p> <strong> Category: </strong> {{transaction.category}} </p>
+            <button id="delete-btn" class="btn btn-danger" data-id="{{transaction.id}}">Delete</button>   
     {{/each}}
   </div>
   {{/if}}
 </div>
 
-<h4>Expenses</h4>
-<div>
-  <canvas id="myChart"></canvas>
+<h4 class="titlesForm" id="tableRegistered">Expenses</h4>
+<div class="chartOrigin">
+  <canvas style="" id="myChart"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
