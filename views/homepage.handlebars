@@ -1,14 +1,16 @@
 
 
-<div id="displayData" class="col-md-6 project-list">
+<div id="display-data" class="col-md-6 project-list">
 <h3>Registered Transactions:</h3>
 {{#if user.transactions.length}}
     {{#each user.transactions as |transaction|}}
-        <li>{{transaction.date}} <br>
-            Type:{{transaction.type}} <br>
-            Amount: ${{transaction.amount}} <br>
-            Category:{{transaction.category}}<br><br> 
-            <button id="delete-btn" data-id="{{transaction.id}}">DELETE</button>   
+    <ul>
+      Type:{{transaction.type}} <br>
+      Amount: ${{transaction.amount}} <br>
+      Date: {{format_date transaction.date}} <br>
+      Category:{{transaction.category}}<br><br> 
+      <button class="delete-btn" data-id="{{transaction.id}}">DELETE</button>
+    </ul>
     {{/each}}
   </div>
   {{/if}}
