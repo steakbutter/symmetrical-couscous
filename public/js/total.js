@@ -37,19 +37,25 @@ fetchData()
   }
   return income, expense;
 })
-.then(()=>{
-  // Then with the income and expense, print the chart on the page
+.then(() => {
+  // Obtener el contexto del canvas
+  var ctx = document.getElementById('myChart').getContext('2d');
+
+  // Crear el gráfico
   new Chart(ctx, {
     type: 'pie',
     data: {
       labels: ['Income', 'Expenses'],
       datasets: [{
         label: 'Transactions',
-        data: [income,expense],
-        borderWidth: 1
+        data: [income, expense],
+        borderWidth: 1,
+        backgroundColor: ['#36A2EB', '#FF6384'], // Puedes cambiar los colores según tu preferencia
       }]
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true
@@ -57,8 +63,7 @@ fetchData()
       }
     }
   });
-})
-
+});
 
 
 

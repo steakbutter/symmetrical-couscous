@@ -13,6 +13,15 @@ h1 {
   color: #007bff; /* Blue color for the header text */
 }
 
+.titlesForm {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 18px;
+}
+
+
+
 a {
   text-decoration: none;
   color: #007bff; /* Blue color for links */
@@ -43,6 +52,10 @@ header {
 
 .p-2 {
   padding: 20px;
+}
+
+.divTable{
+  padding: 20px; 
 }
 
 /* Navigation */
@@ -126,17 +139,24 @@ h2 {
   color: #007bff; /* Blue color for the headers */
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -15px;
+#tablita-1{
+  max-height: 435px;
+  overflow: scroll;
+  margin-bottom: 18px;
+
 }
 
-.col-md-6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding: 0 15px;
-  box-sizing: border-box;
+#displayData li{
+  padding: 15px;
+  background-color: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary);
+  margin-bottom: 10px;
+  border-radius: var(--bs-border-radius-lg) !important;
+}
+
+#displayData p {
+  margin-bottom: 8px;
 }
 
 .form {
@@ -191,11 +211,19 @@ button[type="submit"]:hover {
   background-color: #fbc02d;
 }
 
+#displayData{
+  width: 100%!important;
+}
+
+#displayData li{
+  list-style-type: none;
+}
+
 /* ----------------------------TRANSACTION FORM------------------------------ */
 
 #transaction-form {
-  width: 50%;
-  float: left;
+ 
+  
   padding: 20px;
   box-sizing: border-box;
 }
@@ -244,3 +272,4 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #388e3c;
 }
+
