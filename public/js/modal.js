@@ -18,7 +18,6 @@ const newTransactionHandler = async (event) => {
       }
     });
 
-    console.log(response);
     if (response.ok) {
       document.location.replace('/');
     } else {

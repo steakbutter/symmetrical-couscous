@@ -2,6 +2,7 @@
 <h3 class="titlesForm" id="tableRegistered">Registered Transactions:</h3>
 <div id="displayData" class="project-list ">
 
+
 {{#if user.transactions.length}}
     {{#each user.transactions as |transaction|}}
         <li>
@@ -10,6 +11,7 @@
            <p> <strong>Amount: </strong> ${{transaction.amount}} </p>
             <p> <strong> Category: </strong> {{transaction.category}} </p>
             <button id="delete-btn" class="btn btn-danger" data-id="{{transaction.id}}">Delete</button>   
+
     {{/each}}
   </div>
   {{/if}}
