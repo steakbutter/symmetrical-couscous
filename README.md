@@ -2,9 +2,9 @@
 
 ## Description
 Website: https://symmetrical-couscous-1.onrender.com/ <br>
-BTS Financial In N Out is a financial tracker website, that allows the user to input data about their finances. <br>
+BTS My Precious is a financial tracker website, that allows the user to input data about their finances. <br>
 We thought of designing a web application that could be useful to an audience who wants to keep track of their income and expenses. <br>
-With Financial In N Out, the user will be able to easily track money coming in and out of their accounts. Allowing the user to be mindful of their future goals, by knowing how much they are spending vs how much they are making. <br>
+With My Precious, the user will be able to easily track money coming in and out of their accounts. Allowing the user to be mindful of their future goals, by knowing how much they are spending vs how much they are making. <br>
 By developing this full stack application, we learned how the front end and back end compliment each other to create a useful tool with a full user experience. 
 
 ## Table of Contents (Optional)
@@ -37,8 +37,8 @@ Pie chart will be updated with user's transactions input. This chart will help t
 
 Carlos Jorge Gonzalez https://github.com/steakbutter <br>
 Cristian Loera https://github.com/el-bicho7 <br>
-Dalia  https://github.com/dali-gogo <br>
-Karime Gutierrez https://github.com/Karimegtz
+Karime Gutierrez https://github.com/Karimegtz <br>
+Dalia Gomez https://github.com/dali-gogo
 
 ## License
 
