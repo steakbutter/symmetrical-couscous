@@ -16,5 +16,5 @@ const deleteTransactionHandler = async (event) => {
   };
   
   document
-    .querySelector('#display-data')
+    .querySelector('#displayData')
     .addEventListener('click', deleteTransactionHandler);
