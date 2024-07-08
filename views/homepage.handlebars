@@ -9,7 +9,7 @@
            <p> <strong> Type:</strong>  {{transaction.type}} </p>
            <p> <strong>Amount: </strong> ${{transaction.amount}} </p>
             <p> <strong> Category: </strong> {{transaction.category}} </p>
-            <button id="delete-btn" class="btn btn-danger" data-id="{{transaction.id}}">Delete</button>   
+            <button id="delete-btn" class="btn btn-danger delete-btn" data-id="{{transaction.id}}">Delete</button>   
     {{/each}}
   </div>
   {{/if}}
