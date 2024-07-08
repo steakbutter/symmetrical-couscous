@@ -1,7 +1,6 @@
-<div class="tablita" id="tablita-1"></div>
+<!---div class="tablita" id="tablita-1"></*div--->
 <h3 class="titlesForm" id="tableRegistered">Registered Transactions:</h3>
 <div id="displayData" class="project-list ">
-
 
 {{#if user.transactions.length}}
     {{#each user.transactions as |transaction|}}
@@ -10,14 +9,13 @@
            <p> <strong> Type:</strong>  {{transaction.type}} </p>
            <p> <strong>Amount: </strong> ${{transaction.amount}} </p>
             <p> <strong> Category: </strong> {{transaction.category}} </p>
-            <button id="delete-btn" class="btn btn-danger delete-btn" data-id="{{transaction.id}}">Delete</button>   
-
+            <button id="delete-btn" class="btn btn-danger" data-id="{{transaction.id}}">Delete</button>   
     {{/each}}
   </div>
   {{/if}}
 </div>
 
-<h4 class="titlesForm" id="tableRegistered">Expenses</h4>
+<h4 class="titlesForm" id="tableRegistered">Income vs Expenses Chart</h4>
 <div class="chartOrigin">
   <canvas style="" id="myChart"></canvas>
 </div>
